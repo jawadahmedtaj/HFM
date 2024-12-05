@@ -1,5 +1,6 @@
-import Image from 'next/image';
+//Change location to try force reload
 import Header from './components/header';
+
 import ContactForm from './components/contactform';
 
 export default function Home() {
