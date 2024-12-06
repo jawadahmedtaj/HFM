@@ -28,7 +28,7 @@ const PrizeCards = ({ number, money, name }) => {
         scale: 1.1,
       }}
       viewport={{ once: true }}
-      className="w-[427px] h-[350px] bg-[#F4F4F4] rounded-lg"
+      className="w-[327px] xl:w-[427px] h-[350px] bg-[#F4F4F4] rounded-lg"
     >
       <div className="grid grid-flow-row place-content-center gap-6 pt-8">
         <PrizeMedal number={number} />
@@ -58,7 +58,7 @@ export default function Prizes() {
   return (
     <div className="grid grid-flow-row place-content-center py-32 gap-32">
       <p className="text-black font-normal text-5xl place-self-center">PRIZES</p>
-      <div className="grid grid-flow-col gap-8">
+      <div className="grid grid-flow-row lg:grid-flow-col gap-8">
         {prizes.map((prize, index) => (
           <PrizeCards key={index} {...prize} number={index + 1} />
         ))}

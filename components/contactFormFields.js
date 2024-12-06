@@ -64,7 +64,7 @@ export default function ContactFormFields() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="gap-4 flex flex-col px-8 py-8 text-black [&_input]:h-10"
       >
-        <div className="gap-4 grid grid-cols-2">
+        <div className="gap-4 grid grid-flow-row lg:grid-flow-col">
           <FormField
             control={form.control}
             name="firstname"
@@ -103,7 +103,7 @@ export default function ContactFormFields() {
           )}
         />
 
-        <div className="gap-4 grid grid-cols-2">
+        <div className="gap-4 grid grid-rows-2 lg:grid-cols-2">
           <FormField
             control={form.control}
             name="email"

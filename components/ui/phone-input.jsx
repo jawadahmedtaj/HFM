@@ -21,7 +21,7 @@ const PhoneInput = React.forwardRef(({ className, onChange, ...props }, ref) => 
   return (
     <RPNInput.default
       ref={ref}
-      className={cn('flex justify-between gap-4', className)}
+      className={cn('flex flex-col lg:flex-row justify-between gap-4', className)}
       flagComponent={FlagComponent}
       countrySelectComponent={CountrySelect}
       inputComponent={InputComponent}

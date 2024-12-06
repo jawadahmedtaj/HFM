@@ -5,7 +5,7 @@ export default function MobileAd() {
   return (
     <div className="w-screen bg-[#F4F4F4] flex flex-col justify-end items-center pt-20 gap-20">
       <p className="font-normal text-5xl">Quisque rutrum</p>
-      <div className="grid grid-flow-col col-span-3 justify-evenly gap-10">
+      <div className="grid grid-flow-row lg:grid-flow-col col-span-3 justify-evenly gap-10">
         <div className="grid grid-flow-row">
           <div className="grid grid-flow-row place-content-center">
             <UserRoundCheck size={124} color="#CD0511" strokeWidth={0.5} />
@@ -20,7 +20,13 @@ export default function MobileAd() {
             </p>
           </div>
         </div>
-        <Image src="/mobileScreen.png" alt="Mobile Screen" width={628} height={626} />
+        <Image
+          className="order-last lg:order-none"
+          src="/mobileScreen.png"
+          alt="Mobile Screen"
+          width={628}
+          height={626}
+        />
         <div className="grid grid-flow-row">
           <div className="grid grid-flow-row place-content-center">
             <SlidersVertical size={124} color="#CD0511" strokeWidth={0.5} />

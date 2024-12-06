@@ -4,9 +4,9 @@ import { Facebook, X, Instagram, Youtube, Linkedin } from 'lucide-react';
 export default function Footer() {
   const icons = [Facebook, X, Instagram, Instagram, Youtube, Linkedin];
   return (
-    <footer className="bg-[#161616] h-[330px] flex justify-center items-center text-white">
-      <div className="grid grid-flow-col container">
-        <div className="grid grid-flow-row gap-4">
+    <footer className="bg-[#161616] min-h-[330px] flex justify-center items-center text-white">
+      <div className="grid grid-flow-row md:grid-flow-col container px-10 lg:px-0 py-10 lg:py-0">
+        <div className="grid grid-flow-row gap-4 px-10 lg:px-0">
           <p className="font-bold text-[#EEEEEE]">Find us on</p>
           <div className="grid grid-flow-col-dense gap-2">
             {icons.map((Icon, index) => (
@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="grid grid-flow-row justify-between px-20">
+        <div className="grid grid-flow-row justify-between px-10 lg:px-20">
           <p className="text-[#EEEEEE] font-bold text-lg">Risk Warning</p>
           <p className="text-[#999999] text-xs">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget

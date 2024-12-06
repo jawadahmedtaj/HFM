@@ -35,7 +35,7 @@ const PrizeCard = ({ position, money, name, number, gain, month }) => {
       whileHover={{
         scale: 1.1,
       }}
-      className="w-[600px] h-[210px] bg-white rounded-2xl flex items-center relative overflow-hidden"
+      className="w-[600px] lg:w-[400px] xl:w-[600px] h-[210px] bg-white rounded-2xl flex items-center relative overflow-hidden"
     >
       <div className="grid grid-flow-col justify-start items-center gap-8">
         <PrizeCup position={position} />
@@ -105,13 +105,13 @@ export default function Gains() {
   return (
     <div className="grid grid-flow-row place-content-center pt-32 gap-32 bg-[#F4F4F4]">
       <p className="text-black font-normal text-5xl place-self-center">Sed fringilla mauris sit</p>
-      <div className="grid grid-flow-col gap-8">
-        <div className="grid grid-flow-row gap-4">
+      <div className="grid grid-flow-row lg:grid-flow-col gap-8">
+        <div className="grid grid-flow-row gap-4 justify-center">
           {prizes.map((prize) => (
             <PrizeCard {...prize} key={prize.position} />
           ))}
         </div>
-        <div className="grid grid-flow-row w-[650px] gap-4">
+        <div className="grid grid-flow-row w-[650px] lg:w-[400px] xl:w-[650px] gap-4">
           <p className="font-bold text-2xl">Aliquam lorem ant</p>
           <div className="grid grid-flow-col justify-between border-b border-[#DEDEDE] px-8 text-[#CD0511] font-bold pb-2">
             <p>Name</p>
