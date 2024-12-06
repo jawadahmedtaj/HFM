@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CheckIcon, ChevronsUpDown } from 'lucide-react';
+import { CheckIcon, ChevronDown } from 'lucide-react';
 import * as RPNInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 
@@ -21,7 +21,7 @@ const PhoneInput = React.forwardRef(({ className, onChange, ...props }, ref) => 
   return (
     <RPNInput.default
       ref={ref}
-      className={cn('flex', className)}
+      className={cn('flex justify-between gap-4', className)}
       flagComponent={FlagComponent}
       countrySelectComponent={CountrySelect}
       inputComponent={InputComponent}
@@ -43,24 +43,33 @@ const PhoneInput = React.forwardRef(({ className, onChange, ...props }, ref) => 
 PhoneInput.displayName = 'PhoneInput';
 
 const InputComponent = React.forwardRef(({ className, ...props }, ref) => (
-  <Input className={cn('rounded-e-lg rounded-s-none', className)} {...props} ref={ref} />
+  <Input className={cn('rounded-lg', className)} {...props} ref={ref} />
 ));
 InputComponent.displayName = 'InputComponent';
 
 const CountrySelect = ({ disabled, value: selectedCountry, options: countryList, onChange }) => {
+  const selectedFullCountryName = countryList.find(
+    (country) => country.value === selectedCountry
+  )?.label;
+
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
           type="button"
           variant="outline"
-          className="focus:z-10 flex gap-1 px-3 border-r-0 rounded-e-none rounded-s-lg"
+          className="focus:z-10 flex justify-between px-3 border rounded rounded-s-lg w-full h-10"
           disabled={disabled}
         >
-          <FlagComponent country={selectedCountry} countryName={selectedCountry} />
-          <ChevronsUpDown
-            className={cn('-mr-2 size-4 opacity-50', disabled ? 'hidden' : 'opacity-100')}
-          />
+          {selectedCountry ? (
+            <div className="flex gap-1">
+              <FlagComponent country={selectedCountry} countryName={selectedCountry} />
+              <span>{selectedFullCountryName}</span>
+            </div>
+          ) : (
+            <span className="text-muted-foreground">Select a country</span>
+          )}
+          <ChevronDown className={cn(' size-4 opacity-50 ', disabled ? 'hidden' : 'opacity-100')} />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="p-0 w-[300px]">
